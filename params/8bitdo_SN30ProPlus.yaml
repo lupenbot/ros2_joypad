@@ -1,0 +1,69 @@
+/joypads:
+  SN30ProPlus:
+    ros__parameters:
+
+      # Device
+      joypad_device: "/dev/input/js1"
+
+      # Mapping.
+      buttons_mapping: [
+        "{A, 1}",
+        "{B, 0}",
+        "{X, 3}",
+        "{Y, 2}",
+        "{L, 4}",
+        "{R, 5}",
+        "{SELECT, 6}",
+        "{START, 7}",
+        "{L3, 8}",
+        "{R3, 9}",
+      ]
+
+      dpad_mapping: [
+        "{DPAD_X, 6}",
+        "{DPAD_Y, 7}",
+      ]
+
+      axis_mapping: [
+        "{ZL, 2}",
+        "{ZR, 5}",
+        "{XL, 0}",
+        "{YL, 1}",
+        "{XR, 3}",
+        "{YR, 4}"
+      ]
+
+      # Twist msg control.
+      # XL/YL -> Left analog control mode.
+      # TODO: To implement ZR/ZL/XL -> Racing mode.
+      publish_cmd_vel: true
+      twist_linear_axis_pos_tag:  "YL"
+      twist_linear_axis_neg_tag:  "YL"
+      twist_angular_axis_pos_tag: "XL"
+      twist_angular_axis_neg_tag: "XL"
+
+      twist_max_linear_axis_pos: 0.5 #  m/s
+      twist_max_linear_axis_neg: -0.5 #  m/s
+      twist_max_angular_axis_pos: 0.5 # m/s
+      twist_max_angular_axis_neg: -0.5 # m/s
+
+      # TODO: Implement this.
+      # Additional options.
+      # To invert axis, use -1.0
+      # left_analog_scale_x_axis: 1.0
+      # left_analog_scale_y_axis: 1.0
+
+      # right_analog_scale_x_axis: 1.0
+      # right_analog_scale_y_axis: 1.0
+      
+      # z_left_scale_axis: 1.0
+      # z_right_scale_axis: 1.0
+
+      # Frame ID:
+      frame_id: "sn30pro_plus"
+
+      # Rates.
+      joypad_refresh_rate_ms: 20
+      pub_callback_rate_ms: 20
+      
+      
