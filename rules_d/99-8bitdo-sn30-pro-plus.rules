@@ -1,0 +1,15 @@
+# Use this command to look for your device attributes:
+# 'udevadm info -a -n /dev/input/jsX', where 'X' is the number assigned to your joypad.
+#
+# Copy this file into '/etc/udev/rules.d/' folder as 'sudo'.
+# e.g. 'sudo cp 99-8bitdo-sn30-pro-plus.rules /etc/udev/rules.d/99-8bitdo-sn30-pro-plus.rules'
+#
+# Assign a name in the SYMLINK section.
+# e.g. 'joypads/8bitdo_sn30pro_plus', 'joypads/coolPad', 'joypads/myPad', ...
+# Once the controller is connected, it will be listed under '/dev/{NAME OF THE SYMLINK}'
+
+# 8BitDo SN30pro+ (/dev/input/js*)
+KERNEL=="js*", ATTRS{name}=="8BitDo SN30 Pro+", ATTRS{id/vendor}=="045e", ATTRS{uniq}=="e4:17:d8:51:e5:66", SYMLINK+="joypads/8bitdo_sn30pro_plus"
+
+# Refrences
+# https://www.freedesktop.org/software/systemd/man/latest/udev.html 
