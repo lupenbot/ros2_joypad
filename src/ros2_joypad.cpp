@@ -183,11 +183,11 @@ namespace ros2_joypad {
                     // Angular
                     aux_range_ = twist_max_angular_axis_neg_ - twist_max_angular_axis_pos_;
                     if(joypad_map_.axis_mapping.at(joypad_event_.number).key == twist_angular_axis_pos_tag_){
-                        ros_msg_twist_.angular.x = joypad_map_.axis_mapping.at(joypad_event_.number).value * 
+                        ros_msg_twist_.angular.z = joypad_map_.axis_mapping.at(joypad_event_.number).value * 
                                                   (aux_range_) / 65535.0;
                     }
                     if(joypad_map_.axis_mapping.at(joypad_event_.number).key == twist_angular_axis_neg_tag_){
-                        ros_msg_twist_.angular.x = joypad_map_.axis_mapping.at(joypad_event_.number).value * 
+                        ros_msg_twist_.angular.z = joypad_map_.axis_mapping.at(joypad_event_.number).value * 
                                                   (aux_range_) / 65535.0;
                     }
 
