@@ -1,0 +1,18 @@
+# Use this command to look for your device attributes:
+# 'udevadm info -a -n /dev/input/jsX', where 'X' is the number assigned to your joypad.
+#
+# Copy this file into '/etc/udev/rules.d/' folder as 'sudo'.
+# e.g. 'sudo cp 99-microsoft-xbox-360-pad.rules /etc/udev/rules.d/99-microsoft-xbox-360-pad.rules'
+#
+# Restart the machine or run the follow command:
+# 'sudo service udev restart'
+#
+# Assign a name in the SYMLINK section.
+# e.g. 'joypads/8bitdo_sn30pro_plus', 'joypads/coolPad', 'joypads/myPad', ...
+# Once the controller is connected, it will be listed under '/dev/{NAME OF THE SYMLINK}'
+
+# Microsoft X-Box 360 pad 
+KERNEL=="js*", ATTRS{name}=="Microsoft X-Box 360 pad", ATTRS{id/vendor}=="045e", SYMLINK+="joypads/microsoft_xbox360_pad"
+
+# Refrences
+# https://www.freedesktop.org/software/systemd/man/latest/udev.html 
